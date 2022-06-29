@@ -1,0 +1,56 @@
+#root {
+  margin: 3rem;
+}
+
+main {
+  display: flex;
+}
+
+.selected a {
+  background-color: dodgerBlue;
+  color: cornSilk;
+}
+
+#details {
+  flex: 2;
+}
+
+#users-list {
+  flex: 1;
+  padding: 1.5rem;
+}
+
+#users {
+  display: flex;
+}
+
+#users > a {
+  flex: 1;
+}
+
+li {
+  list-style: none;
+}
+
+#story {
+  border-bottom: solid 1px black;
+  margin: 1rem;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+#title {
+  font-weight: bold;
+}
+
+#star {
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.favorite {
+  background-color: rgb(255, 224, 49);
+}

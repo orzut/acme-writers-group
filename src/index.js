@@ -14,6 +14,7 @@ class App extends Component {
     };
     this.deleteUser = this.deleteUser.bind(this);
     this.createUser = this.createUser.bind(this);
+    this.toggleFavorite = this.toggleFavorite.bind(this);
   }
   async componentDidMount() {
     try {
@@ -49,17 +50,19 @@ class App extends Component {
     this.setState({ users });
     window.location.href = window.location.origin + `/#${response.data.id}`;
   }
-  
+  async toggleFavorite(story) {
+    console.log(story);
+  }
   render() {
     const { users, userId } = this.state;
-    const { deleteUser, createUser} = this;
+    const { deleteUser, createUser, toggleFavorite } = this;
     return (
       <div>
         <h1>Acme Writers Group ({users.length})</h1>
         <button onClick={createUser}>Add a User</button>
         <main>
           <Users users={users} userId={userId} deleteUser={deleteUser} />
-          {userId ? <User userId={userId} /> : null}
+          {userId ? <User userId={userId} onFavorite={toggleFavorite} /> : null}
         </main>
       </div>
     );
