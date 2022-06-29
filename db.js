@@ -24,7 +24,6 @@ const Story = db.define("stories", {
   },
   favorite: {
     type: Sequelize.BOOLEAN,
-    defaultValue: false,
   },
 });
 
